@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1>Trading App</h1>
+    <p>Welcome</p>
+    <form method="get">
+        <label for='ticker'>Ticker: </label>
+        <input id ='ticker' name='ticker'/>
+        <input type='submit' text='Search'/>
+    </form>
+    <p><%= ticker["description"] %></p>
+    <ul>
+        <% for (const [key, value] of Object.entries(ticker)) { %>
+          <li>
+            <span><strong><%= key %>:</strong></span>
+            <span><%= value %></span>
+          </li>
+        <% }; %>
+      </ul>
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
